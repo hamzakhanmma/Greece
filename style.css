@@ -1,13 +1,8 @@
 :root {
-    --primary-red: #C60B1E;      /* Spanish flag red */
-    --primary-yellow: #FFC400;   /* Spanish flag yellow */
-
-    --secondary-blue: #0055A4;   /* Dark blue (buttons/footer) */
-    --light-blue: #4FA3D1;       /* NEW: light blue for navbar */
-
-    --secondary-white: #FFFFFF;
-    --light-gray: #F5F5F5;
-    --dark-gray: #333333;
+  --primary-blue: #0057B8;
+  --secondary-blue: #0D5EAF;
+  --accent-blue: #2E86DE;
+  --white: #ffffff;
 }
 
 /* =========================
@@ -1117,6 +1112,7 @@ mark {
     -webkit-filter: none !important;
     opacity: 1 !important;
 }
+
 
 
 
