@@ -1092,4 +1092,11 @@ overflow: hidden;
     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
+.card-link,
+.card-link:visited,
+.card-link:hover,
+.card-link:active {
+    text-decoration: none;
+    color: inherit;
+}
 
