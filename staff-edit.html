@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Staff Editor - Spain Work Experience Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+<nav class="main-nav">
+    <!-- Logo added here -->
+    <div class="nav-logo">
+        <img src="logo.png" alt="Leicester College Logo" height="100">
+        <span>🇪🇸 Spain 2025/26</span>
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="flight-info.html">Flight Info</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="reflective-diary.html">Diary</a></li>
+        <li><a href="staff-edit.html" class="staff-link">Staff Editor</a></li>
+    </ul>
+</nav>
+<nav class="main-nav">
+    <div>🇪🇸 Spain 2025/26 - Staff Area</div>
+    <ul>
+        <li><a href="index.html">Back to Portal</a></li>
+        <li><a href="#" onclick="showAdminPanel()">Access Editor</a></li>
+    </ul>
+</nav>
+
+<main class="staff-main">
+    <div class="staff-intro">
+        <h1>Staff Editing Portal</h1>
+        <p>This area is for authorized staff only to update portal content.</p>
+        <button class="btn-primary" onclick="showAdminPanel()">Click here to access editor</button>
+        <p><small>Password: admin123</small></p>
+    </div>
+
+    <!-- Hidden admin panel accessible via password -->
+    <div id="admin-panel" style="display:none;">
+        <h2>Portal Content Editor</h2>
+        
+        <div class="editor-section">
+            <h3>Edit Homepage Content</h3>
+            <textarea id="editable-content" rows="10" placeholder="Paste content to edit here..."></textarea>
+            <div class="editor-buttons">
+                <button onclick="saveContent()" class="btn-primary">Save Changes</button>
+                <button onclick="loadContent()" class="btn-secondary">Load Current Content</button>
+                <button onclick="resetEditor()" class="btn-secondary">Clear</button>
+            </div>
+        </div>
+        
+        <div class="editor-section">
+            <h3>Upload New Document</h3>
+            <input type="file" id="document-upload">
+            <button onclick="uploadDocument()" class="btn-secondary">Upload</button>
+        </div>
+        
+        <div class="editor-section">
+            <h3>View Registrations</h3>
+            <button onclick="viewRegistrations()" class="btn-secondary">View Registered Students</button>
+            <div id="registration-list" style="margin-top: 15px;"></div>
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer">
+    Leicester College | Staff Portal | Spain Work Experience 2025/26
+</footer>
+
+<script>
+// Simple password protection
+function showAdminPanel() {
+    const password = prompt('Enter admin password:');
+    if(password === 'admin123') {
+        document.getElementById('admin-panel').style.display = 'block';
+        document.querySelector('.staff-intro').style.display = 'none';
+    } else {
+        alert('Incorrect password. Access denied.');
+    }
+}
+
+<script>
+function saveContent() {
+  const content = document.getElementById("editable-content").value;
+
+  db.collection("pages").doc("homepage").set({
+    html: content,
+    updatedAt: new Date()
+  })
+  .then(() => {
+    alert("Homepage updated successfully!");
+  })
+  .catch(err => {
+    alert("Error saving content");
+    console.error(err);
+  });
+}
+</script>
+
+function loadContent() {
+  db.collection("pages").doc("homepage").get()
+    .then(doc => {
+      if (doc.exists) {
+        document.getElementById("editable-content").value = doc.data().html;
+      } else {
+        alert("No content found.");
+      }
+    });
+}
+
+
+function resetEditor() {
+    if(confirm('Clear the editor?')) {
+        document.getElementById('editable-content').value = '';
+    }
+}
+
+function uploadDocument() {
+    const fileInput = document.getElementById('document-upload');
+    if(fileInput.files.length === 0) {
+        alert('Please select a file first.');
+        return;
+    }
+    alert('Document upload functionality would connect to a server in production.');
+}
+
+function viewRegistrations() {
+    const registration = localStorage.getItem('studentRegistration');
+    const listDiv = document.getElementById('registration-list');
+    
+    if(registration) {
+        const data = JSON.parse(registration);
+        listDiv.innerHTML = `
+            <div class="card">
+                <h4>Latest Registration:</h4>
+                <p><strong>Name:</strong> ${data.name}</p>
+                <p><strong>Student ID:</strong> ${data.studentId}</p>
+                <p><strong>Email:</strong> ${data.email}</p>
+                <p><strong>Registered:</strong> ${new Date(data.timestamp).toLocaleString()}</p>
+            </div>
+        `;
+    } else {
+        listDiv.innerHTML = '<p>No registrations found.</p>';
+    }
+}
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+<script>
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+db.collection("pages").doc("homepage").get().then(doc => {
+  if (doc.exists) {
+    document.getElementById("dynamic-content").innerHTML = doc.data().html;
+  }
+});
+</script>
+
+</body>
+
+</html>
+
+
+

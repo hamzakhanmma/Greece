@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spain Work Experience 2025/26</title>
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript -->
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+<!-- Update your navigation in ALL HTML files -->
+<nav class="main-nav">
+    <!-- Logo added here -->
+    <div class="nav-logo">
+        <img src="logo.png" alt="Leicester College Logo" height="100">
+        <span>🇪🇸 Spain 2025/26</span>
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="flight-info.html">Flight Info</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="reflective-diary.html">Diary</a></li>
+        <li><a href="staff-edit.html" class="staff-link">Staff Editor</a></li>
+    </ul>
+</nav>
+<main>
+    <header class="dashboard-header">
+        <h1>Spain International Work Experience 2025/26</h1>
+        <img src="plaza-de-espana-sevilla.jpg" alt="Spain city view" class="hero-image">
+        <section class="countdown-section">
+            <div id="countdown-timer" class="countdown-container">
+            <section class="card">
+                <h2>Admin-Editable Section</h2>
+                <div id="dynamic-content"></div>
+                </section>
+
+                <!-- Countdown will appear here -->
+                
+            </div>
+        </section>
+    </header>
+
+    <div class="quick-access-grid">
+        <a class="card" href="flight-info.html">
+            ✈️ <h3>Flight Information</h3>
+            <p>Meeting point, luggage, transfers</p>
+        </a>
+
+        <a class="card urgent" href="safety-wellbeing.html">
+            ⚠️ <h3>Keeping Safe</h3>
+            <p>Emergency & safety guidance</p>
+        </a>
+        
+        <a class="card" href="accommodation.html">
+            🏠 <h3>Accommodation</h3>
+            <p>Living arrangements & rules</p>
+        </a>
+        
+        <a class="card" href="cultural-info.html">
+            🇪🇸 <h3>Spanish Culture</h3>
+            <p>Phrases, customs, do's & don'ts</p>
+        </a>
+    </div>
+
+    <section class="dashboard-grid">
+        <div class="card">
+            <h2>Key Contact</h2>
+            <p><strong>Jodie Rolls</strong></p>
+            <p>📞 07818 588378</p>
+            <p>📧 International Work Experience Coordinator</p>
+        </div>
+        
+        <div class="card">
+            <h2>Trip Status</h2>
+            <div id="registration-status">
+                <!-- Registration status will appear here -->
+                <p><em>Check your registration status</em></p>
+            </div>
+            <a href="registration.html" class="btn-secondary">Register Now</a>
+        </div>
+        
+        <div class="card">
+            <h2>Quick Links</h2>
+            <ul class="quick-links">
+                <li><a href="itinerary.html">📅 Daily Itinerary</a></li>
+                <li><a href="work-placement.html">🔧 Work Placement Info</a></li>
+                <li><a href="faqs.html">❓ FAQs</a></li>
+                <li><a href="staff-edit.html" style="color: #c60b1e;">🔐 Staff Area</a></li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+<footer class="site-footer">
+    Leicester College | Spain Work Experience 2025/26
+</footer>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+<script>
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+
+db.collection("pages").doc("homepage").get().then(doc => {
+  if (doc.exists) {
+    document.getElementById("dynamic-content").innerHTML = doc.data().html;
+  }
+});
+</script>
+
+</body>
+
+</html>
+
+
+
+

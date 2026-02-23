@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spain Work Experience 2025/26</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript -->
+    <script src="main.js" defer></script>
+</head>
+
+<body>
+
+<nav class="main-nav">
+    <!-- Logo added here -->
+    <div class="nav-logo">
+        <img src="logo.png" alt="Leicester College Logo" height="100">
+        <span>🇪🇸 Spain 2025/26</span>
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="flight-info.html">Flight Info</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="reflective-diary.html">Diary</a></li>
+        <li><a href="staff-edit.html" class="staff-link">Staff Editor</a></li>
+    </ul>
+</nav>
+
+<main>
+    <h1>Reflective Diary</h1>
+
+    <p>
+        Use this diary to reflect on your daily experiences during your work placement
+        in Spain. This will support your learning and future assignments.
+    </p>
+
+    <section class="diary-section">
+        <form id="diaryForm" class="card">
+            <h2>New Entry</h2>
+
+            <div class="form-group">
+                <label for="entryDate"><strong>Date</strong></label>
+                <input type="date" id="entryDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="entryTitle"><strong>Title</strong></label>
+                <input type="text" id="entryTitle" placeholder="e.g. First day at placement">
+            </div>
+
+            <div class="form-group">
+                <label for="entryContent"><strong>Reflection</strong></label>
+                <textarea id="entryContent" rows="6"
+                    placeholder="What did you do today? What went well? What did you learn?"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label><strong>Upload Photo (optional)</strong></label>
+                <input type="file" id="photo-upload" accept="image/*" onchange="handlePhotoUpload(event)">
+                <!-- Photo preview will appear here -->
+                <div id="photo-preview-container" style="margin-top: 10px; display: none;">
+                    <img id="photo-preview" style="max-width: 200px; border-radius: 5px;">
+                    <button type="button" onclick="removePhoto()" style="margin-left: 10px; padding: 5px 10px;">Remove Photo</button>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-primary">
+                Save Entry
+            </button>
+        </form>
+
+        <section style="margin-top:2rem;">
+            <h2>Previous Entries</h2>
+            <p>
+                Your saved diary entries will appear here.
+            </p>
+
+            <div class="card">
+                <p><em>No entries saved yet.</em></p>
+            </div>
+        </section>
+    </section>
+</main>
+
+<footer class="site-footer">
+    Leicester College | Spain Work Experience 2025/26
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+// data.json
+{
+  "registrations": [],
+  "diaryEntries": [],
+  "settings": {
+    "tripDate": "2026-06-01",
+    "contactInfo": "Jodie Rolls: 07818588378"
+  }
+}

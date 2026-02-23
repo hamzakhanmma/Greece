@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FAQs - Spain Work Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+
+<nav class="main-nav">
+    <div class="nav-logo">
+        <img src="logo.png" alt="Leicester College Logo" height="40">
+        <span>🇪🇸 Spain 2025/26</span>
+    </div>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="faqs.html" class="active">FAQs</a></li>
+        <li><a href="itinerary.html">Itinerary</a></li>
+        <li><a href="registration.html">Registration</a></li>
+        <li><a href="staff-edit.html" class="staff-link">Staff Editor</a></li>
+    </ul>
+</nav>
+
+<main>
+    <div class="page-header">
+        <h1>Frequently Asked Questions</h1>
+        <p>Find answers to common questions about the Spain work experience</p>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="card" style="margin-bottom: 2rem;">
+        <div class="search-container">
+            <input type="text" id="faq-search" placeholder="Search for a question or topic..." 
+                   style="width: 100%; padding: 1rem; border: 2px solid var(--primary-yellow); border-radius: 8px;">
+            <div style="text-align: center; margin-top: 1rem; color: #666;">
+                <small>Browse by category: 
+                    <span class="badge badge-red">Travel</span>
+                    <span class="badge badge-yellow">Accommodation</span>
+                    <span class="badge badge-blue">Work</span>
+                    <span class="badge" style="background: #4CAF50; color: white;">Safety</span>
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Categories -->
+    <div class="faq-categories">
+        <button class="category-btn active" data-category="all">All FAQs</button>
+        <button class="category-btn" data-category="travel">✈️ Travel</button>
+        <button class="category-btn" data-category="accommodation">🏠 Accommodation</button>
+        <button class="category-btn" data-category="work">🔧 Work Placement</button>
+        <button class="category-btn" data-category="money">💰 Money & Budget</button>
+        <button class="category-btn" data-category="safety">⚠️ Safety & Health</button>
+        <button class="category-btn" data-category="culture">🇪🇸 Culture</button>
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="faq-container">
+        <!-- TRAVEL FAQs -->
+        <div class="faq-category">
+            <h2 class="category-header">✈️ Travel & Transport</h2>
+            
+            <div class="faq-item" data-category="travel">
+                <div class="faq-question">
+                    <h3>Where is the meeting point for departure?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>The meeting point is at <strong>McDonalds, Meridian Business Park, Meridian East, Leicester LE19 1WZ</strong>. Students must arrive by 9:00 AM on departure day. Coach transfer to Manchester Airport will be provided.</p>
+                    <div class="faq-note">
+                        <strong>Note:</strong> Late arrivals may miss the coach and will need to make their own way to the airport at their own expense.
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="travel">
+                <div class="faq-question">
+                    <h3>What is the luggage allowance?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Each student is allowed:</p>
+                    <ul>
+                        <li><strong>Cabin Bag:</strong> 40x20x25cm (must fit under seat)</li>
+                        <li><strong>Checked Baggage:</strong> 20kg maximum</li>
+                    </ul>
+                    <div class="side-by-side">
+                        <img src="images/faqs/cabin-bag.jpg" alt="Cabin bag example" style="max-width: 150px;">
+                        <img src="images/faqs/checked-bag.jpg" alt="Checked baggage example" style="max-width: 150px;">
+                    </div>
+                    <p><strong>Important:</strong> No liquids over 100ml in cabin bags. Laptops must be in hand luggage.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="travel">
+                <div class="faq-question">
+                    <h3>What travel documents do I need?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Essential documents:</p>
+                    <ol>
+                        <li>Valid passport (check expiry date)</li>
+                        <li>European Health Insurance Card (EHIC/GHIC)</li>
+                        <li>Travel insurance details</li>
+                        <li>Student ID card</li>
+                        <li>Copy of placement confirmation</li>
+                    </ol>
+                    <div class="alert alert-red">
+                        <strong>⚠️ Reminder:</strong> Passport must be valid for at least 6 months beyond return date.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ACCOMMODATION FAQs -->
+        <div class="faq-category">
+            <h2 class="category-header">🏠 Accommodation & Living</h2>
+            
+            <div class="faq-item" data-category="accommodation">
+                <div class="faq-question">
+                    <h3>What are the accommodation arrangements?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Students will stay in shared apartments in Lebrija. Each apartment typically houses 4-6 students with:</p>
+                    <ul>
+                        <li>Shared bedrooms (2 students per room)</li>
+                        <li>Shared kitchen and living area</li>
+                        <li>Bathroom facilities</li>
+                        <li>Wi-Fi access</li>
+                        <li>Basic cooking equipment provided</li>
+                    </ul>
+                    <img src="images/faqs/apartment.jpg" alt="Student accommodation" class="responsive-img" style="max-width: 300px; margin: 1rem 0;">
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="accommodation">
+                <div class="faq-question">
+                    <h3>What are the curfew times?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Curfew times are strictly enforced:</p>
+                    <table class="themed-table" style="max-width: 400px;">
+                        <tr>
+                            <th>Days</th>
+                            <th>Curfew Time</th>
+                        </tr>
+                        <tr>
+                            <td>Sunday - Thursday</td>
+                            <td><strong>22:30</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Friday - Saturday</td>
+                            <td><strong>23:30</strong></td>
+                        </tr>
+                    </table>
+                    <p>Staff will conduct room checks at curfew time. Repeated breaches may result in the 3-strike rule being applied.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="accommodation">
+                <div class="faq-question">
+                    <h3>How do we manage food and cooking?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Each apartment has a fully equipped kitchen. We recommend:</p>
+                    <ul>
+                        <li>Weekly group shopping at local supermarkets</li>
+                        <li>Sharing cooking duties</li>
+                        <li>Setting a shared food budget (€100/week allowance)</li>
+                        <li>Trying local markets for fresh produce</li>
+                    </ul>
+                    <div class="callout callout-primary">
+                        <strong>💡 Tip:</strong> Plan meals together and cook in batches to save time and money!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WORK PLACEMENT FAQs -->
+        <div class="faq-category">
+            <h2 class="category-header">🔧 Work Placement</h2>
+            
+            <div class="faq-item" data-category="work">
+                <div class="faq-question">
+                    <h3>What are the work placement hours?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Standard work hours:</p>
+                    <ul>
+                        <li><strong>Monday - Friday:</strong> 8:00 AM - 2:00 PM</li>
+                        <li><strong>Construction placements:</strong> May start as early as 6:00 AM</li>
+                        <li><strong>Lunch break:</strong> 30-60 minutes (varies by employer)</li>
+                    </ul>
+                    <p>Punctuality is essential. Spanish employers value timeliness.</p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="work">
+                <div class="faq-question">
+                    <h3>What should I wear for work placement?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Required work attire:</p>
+                    <div class="side-by-side">
+                        <div>
+                            <h4>Motor Vehicle:</h4>
+                            <ul>
+                                <li>Steel-toe boots</li>
+                                <li>Overalls/work trousers</li>
+                                <li>High-vis vest (if provided)</li>
+                                <li>No loose clothing</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Construction:</h4>
+                            <ul>
+                                <li>Safety boots</li>
+                                <li>Hard hat (provided)</li>
+                                <li>Work gloves</li>
+                                <li>Long trousers</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <img src="images/faqs/ppe.jpg" alt="PPE equipment" class="responsive-img" style="max-width: 300px;">
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="work">
+                <div class="faq-question">
+                    <h3>What if I don't speak Spanish?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Many employers have worked with international students before. We recommend:</p>
+                    <ol>
+                        <li>Download Google Translate app</li>
+                        <li>Learn basic Spanish phrases (see Culture section)</li>
+                        <li>Use visual communication</li>
+                        <li>Ask for clarification if unsure</li>
+                    </ol>
+                    <div class="callout callout-primary">
+                        <strong>🌟 Opportunity:</strong> This is a great chance to improve your language skills!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MONEY & BUDGET FAQs -->
+        <div class="faq-category">
+            <h2 class="category-header">💰 Money & Budget</h2>
+            
+            <div class="faq-item" data-category="money">
+                <div class="faq-question">
+                    <h3>How much spending money should I bring?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Budget breakdown per week:</p>
+                    <table class="themed-table">
+                        <tr>
+                            <th>Item</th>
+                            <th>Estimated Cost</th>
+                        </tr>
+                        <tr>
+                            <td>Weekly food allowance (provided)</td>
+                            <td>€100</td>
+                        </tr>
+                        <tr>
+                            <td>Additional snacks/drinks</td>
+                            <td>€20-€30</td>
+                        </tr>
+                        <tr>
+                            <td>Weekend activities</td>
+                            <td>€20-€50</td>
+                        </tr>
+                        <tr>
+                            <td>Souvenirs</td>
+                            <td>€20-€50</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Weekly Total</strong></td>
+                            <td><strong>€160-€230</strong></td>
+                        </tr>
+                    </table>
+                    <p><em>Note: Major trips (Seville, Cádiz) are included in program cost.</em></p>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="money">
+                <div class="faq-question">
+                    <h3>Can I use my UK bank card in Spain?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, but consider these tips:</p>
+                    <ul>
+                        <li>Notify your bank about travel to Spain</li>
+                        <li>Check foreign transaction fees</li>
+                        <li>Have some cash (€200-€300) for emergencies</li>
+                        <li>Use ATMs inside banks for security</li>
+                        <li>Consider a travel money card (like Revolut)</li>
+                    </ul>
+                    <div class="alert alert-yellow">
+                        <strong>💳 Tip:</strong> Contactless payments are widely accepted in Spain.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EMERGENCY & SAFETY FAQs -->
+        <div class="faq-category">
+            <h2 class="category-header">⚠️ Safety & Health</h2>
+            
+            <div class="faq-item" data-category="safety">
+                <div class="faq-question">
+                    <h3>What if I get sick or have an emergency?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Emergency procedures:</p>
+                    <ol>
+                        <li>Contact college staff immediately (Jodie: 07818 588378)</li>
+                        <li>For medical emergencies, call 112</li>
+                        <li>Use your GHIC card at local clinics</li>
+                        <li>Staff will accompany you to medical appointments</li>
+                    </ol>
+                    <div class="alert alert-red">
+                        <strong>📞 Emergency Contacts:</strong><br>
+                        General: 112 | Police: 091 | Local Police: 092
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="safety">
+                <div class="faq-question">
+                    <h3>What about sun safety in Spain?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Sun protection is essential in Andalusia:</p>
+                    <ul>
+                        <li>Use factor 30-50 sun cream</li>
+                        <li>Reapply every 2 hours</li>
+                        <li>Wear hats and sunglasses</li>
+                        <li>Drink 2-3 liters of water daily</li>
+                        <li>Avoid midday sun (12:00-15:00)</li>
+                    </ul>
+                    <img src="images/faqs/sun-safety.jpg" alt="Sun safety tips" class="responsive-img" style="max-width: 300px;">
+                </div>
+            </div>
+        </div>
+
+        <!-- CULTURE FAQs -->
+        <div class="faq-category">
+            <h2 class="category-header">🇪🇸 Spanish Culture</h2>
+            
+            <div class="faq-item" data-category="culture">
+                <div class="faq-question">
+                    <h3>What cultural differences should I expect?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Key cultural notes:</p>
+                    <div class="side-by-side">
+                        <div>
+                            <h4>Daily Life:</h4>
+                            <ul>
+                                <li>Siesta time (14:00-17:00)</li>
+                                <li>Late dinners (20:00-22:00)</li>
+                                <li>Greetings with cheek kisses</li>
+                                <li>More physical contact in conversation</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Etiquette:</h4>
+                            <ul>
+                                <li>Say "Hola" when entering shops</li>
+                                <li>Use "por favor" and "gracias"</li>
+                                <li>Keep tops on in public (law)</li>
+                                <li>Dress modestly for religious sites</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-item" data-category="culture">
+                <div class="faq-question">
+                    <h3>Are there any local laws I should know?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Important Spanish laws:</p>
+                    <ul>
+                        <li><strong>No public drinking:</strong> Drinking alcohol in streets is prohibited</li>
+                        <li><strong>No topless sunbathing:</strong> Except on designated beaches</li>
+                        <li><strong>Smoking:</strong> Banned in indoor public spaces</li>
+                        <li><strong>ID:</strong> Carry ID at all times (passport copy is fine)</li>
+                        <li><strong>Photography:</strong> Ask permission before photographing people</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Still Have Questions Section -->
+    <div class="card" style="margin-top: 3rem; text-align: center;">
+        <h2>❓ Still Have Questions?</h2>
+        <p>Contact our International Work Experience Coordinator:</p>
+        <div class="info-card" style="max-width: 500px; margin: 1rem auto;">
+            <img src="images/jodie-rolls.jpg" alt="Jodie Rolls" style="width: 100px; height: 100px; border-radius: 50%;">
+            <div>
+                <h3>Jodie Rolls</h3>
+                <p>📞 07818 588378</p>
+                <p>📧 j.rolls@leicestercollege.ac.uk</p>
+                <a href="mailto:j.rolls@leicestercollege.ac.uk" class="btn-primary">Send Email</a>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="site-footer">
+    <img src="images/leicester-college-logo.png" alt="Leicester College Logo" height="40">
+    <p>Leicester College | Spain Work Experience FAQs 2025/26</p>
+</footer>
+
+<script>
+// FAQ Accordion Functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const searchInput = document.getElementById('faq-search');
+    
+    // Toggle FAQ answers
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const toggle = this.querySelector('.faq-toggle');
+            
+            // Close other open FAQs
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer && item.style.display === 'block') {
+                    item.style.display = 'none';
+                    item.previousElementSibling.querySelector('.faq-toggle').textContent = '+';
+                }
+            });
+            
+            // Toggle current FAQ
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                toggle.textContent = '+';
+            } else {
+                answer.style.display = 'block';
+                toggle.textContent = '−';
+            }
+        });
+    });
+    
+    // Category filter
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const category = this.dataset.category;
+            
+            // Update active button
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Show/hide FAQs based on category
+            const allFaqs = document.querySelectorAll('.faq-item');
+            if (category === 'all') {
+                allFaqs.forEach(faq => faq.style.display = 'block');
+                document.querySelectorAll('.faq-category').forEach(cat => cat.style.display = 'block');
+            } else {
+                allFaqs.forEach(faq => {
+                    if (faq.dataset.category === category) {
+                        faq.style.display = 'block';
+                        faq.closest('.faq-category').style.display = 'block';
+                    } else {
+                        faq.style.display = 'none';
+                    }
+                });
+                // Hide empty categories
+                document.querySelectorAll('.faq-category').forEach(cat => {
+                    const visibleFaqs = cat.querySelectorAll('.faq-item[style="display: block"]');
+                    cat.style.display = visibleFaqs.length > 0 ? 'block' : 'none';
+                });
+            }
+        });
+    });
+    
+    // Search functionality
+    searchInput.addEventListener('keyup', function() {
+        const searchTerm = this.value.toLowerCase();
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('h3').textContent.toLowerCase();
+            const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+            
+            if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                item.style.display = 'block';
+                item.closest('.faq-category').style.display = 'block';
+                
+                // Highlight search term
+                if (searchTerm) {
+                    const regex = new RegExp(`(${searchTerm})`, 'gi');
+                    item.querySelector('.faq-answer').innerHTML = 
+                        item.querySelector('.faq-answer').textContent.replace(regex, '<mark>$1</mark>');
+                }
+            } else {
+                item.style.display = 'none';
+            }
+        });
+        
+        // Hide empty categories
+        document.querySelectorAll('.faq-category').forEach(cat => {
+            const visibleFaqs = cat.querySelectorAll('.faq-item[style="display: block"]');
+            cat.style.display = visibleFaqs.length > 0 ? 'block' : 'none';
+        });
+    });
+});
+</script>
+
+</body>
+</html>
