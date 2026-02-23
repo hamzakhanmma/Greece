@@ -1,52 +1,34 @@
 // ============================================
 // COUNTDOWN TIMER FUNCTIONALITY
 // ============================================
-function updateCountdown() {
-    const tripDate = new Date('June 1, 2026 00:00:00');
-    const now = new Date();
-    const diff = tripDate - now;
-    
-    if (diff < 0) {
-        // Trip has started or passed
-        const countdownEl = document.getElementById('countdown-timer');
-        if (countdownEl) {
-            countdownEl.innerHTML = `
-                <div style="text-align: center; padding: 20px;">
-                    <h3>Trip is underway!</h3>
-                    <p>Follow the diary section for updates.</p>
-                </div>
-            `;
+document.addEventListener("DOMContentLoaded", function () {
+
+    const departureDate = new Date("June 1, 2026 00:00:00").getTime();
+
+    function updateCountdown() {
+        const now = new Date().getTime();
+        const difference = departureDate - now;
+
+        if (difference <= 0) {
+            document.querySelector(".countdown-container").innerHTML =
+                "<h2>We are in Greece! 🇬🇷</h2>";
+            return;
         }
-        return;
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
     }
-    
-    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-    
-    const countdownEl = document.getElementById('countdown-timer');
-    if (countdownEl) {
-        countdownEl.innerHTML = `
-            <div class="countdown-box">
-                <span class="countdown-number">${days}</span>
-                <span class="countdown-label">DAYS</span>
-            </div>
-            <div class="countdown-box">
-                <span class="countdown-number">${hours}</span>
-                <span class="countdown-label">HOURS</span>
-            </div>
-            <div class="countdown-box">
-                <span class="countdown-number">${minutes}</span>
-                <span class="countdown-label">MINUTES</span>
-            </div>
-            <div class="countdown-box">
-                <span class="countdown-number">${seconds}</span>
-                <span class="countdown-label">SECONDS</span>
-            </div>
-        `;
-    }
-}
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+});
 
 // ============================================
 // DIARY FUNCTIONALITY
@@ -292,4 +274,5 @@ db.collection("registrations").get().then(snapshot => {
     // show student + delete button
   });
 });
+
 
