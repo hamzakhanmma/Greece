@@ -380,11 +380,7 @@ textarea {
 }
 
 .countdown-section {
-    margin-bottom: 1.2rem; 
-}
-
-.countdown-section {
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
 }
 /* =========================
    QUICK LINKS & LISTS
@@ -1077,8 +1073,13 @@ mark {
     width: auto;
 }
 
+.urgent {
+    margin-top: 1rem;
+    border-radius: 16px;
+    background: #f5f1e6;
+}
 
-
+overflow: hidden;
 
 
 
