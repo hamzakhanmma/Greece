@@ -23,7 +23,7 @@ body {
         rgba(255, 255, 255, 0.75),
         rgba(255, 255, 255, 0.75)
     ),
-    url("spain-background.png");
+    url("greece-background.png");
 
 
     background-size: cover;
@@ -1080,6 +1080,7 @@ mark {
 }
 
 overflow: hidden;
+
 
 
 
