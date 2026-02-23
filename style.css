@@ -382,6 +382,10 @@ textarea {
 .countdown-section {
     margin-bottom: 1.2rem; 
 }
+
+.countdown-section {
+    margin-bottom: 0.8rem;
+}
 /* =========================
    QUICK LINKS & LISTS
 ========================= */
@@ -1072,6 +1076,7 @@ mark {
     height: 40px;
     width: auto;
 }
+
 
 
 
