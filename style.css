@@ -324,26 +324,59 @@ textarea {
 /* =========================
    COUNTDOWN TIMER
 ========================= */
+/* =========================
+   GREECE COUNTDOWN (MODERN)
+========================= */
+
 .countdown-section {
-    background: linear-gradient(
-        135deg,
-        var(--primary-blue),
-        var(--accent-blue)
-    );
-    color: white;
-    padding: 2rem;
-    border-radius: 12px;
+    background: #ffffff;
+    padding: 3rem 2rem;
+    border-radius: 18px;
     text-align: center;
+    margin: 3rem 0;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.countdown-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-blue);
     margin-bottom: 2rem;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    letter-spacing: 1px;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .countdown-box {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 1rem 1.5rem;
-    border-radius: 10px;
-    min-width: 100px;
-    backdrop-filter: blur(4px);
+    background: linear-gradient(135deg, #0057B8, #2E86DE);
+    color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 16px;
+    min-width: 110px;
+    box-shadow: 0 8px 20px rgba(0, 87, 184, 0.25);
+    transition: transform 0.2s ease;
+}
+
+.countdown-box:hover {
+    transform: translateY(-5px);
+}
+
+.countdown-box h2 {
+    font-size: 2.2rem;
+    margin: 0;
+    font-weight: 800;
+}
+
+.countdown-box p {
+    margin: 0.3rem 0 0;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    opacity: 0.9;
 }
 
 /* =========================
@@ -1036,3 +1069,4 @@ mark {
     height: 40px;
     width: auto;
 }
+
