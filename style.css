@@ -45,16 +45,19 @@ body {
 .main-nav {
     background: linear-gradient(
         135deg,
-        #5db6e6 0%,
-        #4FA3D1 100%
+        #0057B8 0%,   /* Greek flag blue */
+        #1E88E5 60%,
+        #42A5F5 100%
     );
-    color: white;
+    color: #ffffff;
     padding: 1rem 2rem;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
 }
 
 /* =========================
@@ -1113,6 +1116,7 @@ mark {
     -webkit-filter: none !important;
     opacity: 1 !important;
 }
+
 
 
 
