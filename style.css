@@ -1,8 +1,9 @@
 :root {
-  --primary-blue: #0057B8;
+  --primary-blue: #0057B8;     
   --secondary-blue: #0D5EAF;
   --accent-blue: #2E86DE;
   --white: #ffffff;
+  --danger-red: #C0392B;
 }
 
 /* =========================
@@ -1112,6 +1113,7 @@ mark {
     -webkit-filter: none !important;
     opacity: 1 !important;
 }
+
 
 
 
