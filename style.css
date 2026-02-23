@@ -1073,12 +1073,7 @@ mark {
     width: auto;
 }
 
-.staff-main,
-main {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;   /* small clean spacing between sections */
-}
+
 
 
 
