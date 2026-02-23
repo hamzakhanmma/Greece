@@ -1081,6 +1081,15 @@ mark {
 
 overflow: hidden;
 
+.card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
 
+.card-link:hover .card {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
 
 
