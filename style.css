@@ -1100,3 +1100,26 @@ overflow: hidden;
     color: inherit;
 }
 
+.info-section{
+max-width: 900px;
+margin: 60px auto;
+background: rgba(255,255,255,0.85);
+padding: 40px;
+border-radius: 10px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.info-section h2{
+margin-bottom: 20px;
+}
+
+.info-section h3{
+margin-top: 25px;
+color:#1f6fb2;
+}
+
+.info-section ul{
+margin-top:10px;
+margin-left:20px;
+}
+
