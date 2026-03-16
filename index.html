@@ -137,19 +137,6 @@
 <footer class="site-footer">
     Leicester College | Greece Work Experience 2025/26
 </footer>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
-
-<script>
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-
-db.collection("pages").doc("homepage").get().then(doc => {
-  if (doc.exists) {
-    document.getElementById("dynamic-content").innerHTML = doc.data().html;
-  }
-});
-</script>
 
 </body>
 
