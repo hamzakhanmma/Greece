@@ -64,6 +64,20 @@
         </div>
     </div>
 </main>
+    <select id="page-select">
+  <option value="home">Home</option>
+  <option value="faq">FAQ</option>
+  <option value="quad_bikes">Quad Bikes</option>
+</select>
+
+<br><br>
+
+<textarea id="editor" rows="15" cols="80"></textarea>
+
+<br><br>
+
+<button onclick="loadPage()">Load Page</button>
+<button onclick="savePage()">Save Page</button>
 
 <footer class="site-footer">
     Leicester College | Staff Portal | Spain Work Experience 2025/26
@@ -146,41 +160,32 @@ function viewRegistrations() {
     }
 }
 
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+    <script>
 
-<script>
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+async function loadPage() {
+  const page = document.getElementById("page-select").value;
 
-db.collection("pages").doc("homepage").get().then(doc => {
-  if (doc.exists) {
-    document.getElementById("dynamic-content").innerHTML = doc.data().html;
+  const docRef = doc(db, "pages", page);
+  const docSnap = await getDoc(docRef);
+
+  if (docSnap.exists()) {
+    document.getElementById("editor").value = docSnap.data().content;
+  } else {
+    alert("Page not found!");
   }
-});
-</script>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+}
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyDf7or18aKmzQayVtPldT_8dx4fqo_084o",
-    authDomain: "greece-portal-cms.firebaseapp.com",
-    projectId: "greece-portal-cms",
-    storageBucket: "greece-portal-cms.firebasestorage.app",
-    messagingSenderId: "382158940858",
-    appId: "1:382158940858:web:b0f69cdc1b428ec2f2b083",
-    measurementId: "G-57DWVREYY5"
-  };
+async function savePage() {
+  const page = document.getElementById("page-select").value;
+  const content = document.getElementById("editor").value;
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+  await setDoc(doc(db, "pages", page), {
+    content: content
+  });
+
+  alert("Content saved!");
+}
+
 </script>
 </body>
 
