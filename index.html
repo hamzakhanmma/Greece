@@ -136,33 +136,6 @@
 
 <footer class="site-footer">
     Leicester College | Greece Work Experience 2025/26
-</footer>
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
-
-const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_DOMAIN",
-  projectId: "YOUR_PROJECT_ID"
-};
-
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-// LOAD DATA
-async function loadPage() {
-  const docRef = doc(db, "pages", "driving");
-  const docSnap = await getDoc(docRef);
-
-  if (docSnap.exists()) {
-    document.getElementById("page-title").innerText = docSnap.data().title;
-    document.getElementById("page-content").innerText = docSnap.data().content;
-  }
-}
-
-loadPage();
-</script>
 </body>
 
 </html>
