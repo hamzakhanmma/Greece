@@ -95,97 +95,31 @@ function showAdminPanel() {
     }
 }
 
-<script>
-function saveContent() {
-  const content = document.getElementById("editable-content").value;
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
 
-  db.collection("pages").doc("homepage").set({
-    html: content,
-    updatedAt: new Date()
-  })
-  .then(() => {
-    alert("Homepage updated successfully!");
-  })
-  .catch(err => {
-    alert("Error saving content");
-    console.error(err);
-  });
-}
-</script>
+const firebaseConfig = {
+  apiKey: "YOUR_KEY",
+  authDomain: "YOUR_DOMAIN",
+  projectId: "YOUR_PROJECT_ID"
+};
 
-function loadContent() {
-  db.collection("pages").doc("homepage").get()
-    .then(doc => {
-      if (doc.exists) {
-        document.getElementById("editable-content").value = doc.data().html;
-      } else {
-        alert("No content found.");
-      }
-    });
-}
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-
-function resetEditor() {
-    if(confirm('Clear the editor?')) {
-        document.getElementById('editable-content').value = '';
-    }
-}
-
-function uploadDocument() {
-    const fileInput = document.getElementById('document-upload');
-    if(fileInput.files.length === 0) {
-        alert('Please select a file first.');
-        return;
-    }
-    alert('Document upload functionality would connect to a server in production.');
-}
-
-function viewRegistrations() {
-    const registration = localStorage.getItem('studentRegistration');
-    const listDiv = document.getElementById('registration-list');
-    
-    if(registration) {
-        const data = JSON.parse(registration);
-        listDiv.innerHTML = `
-            <div class="card">
-                <h4>Latest Registration:</h4>
-                <p><strong>Name:</strong> ${data.name}</p>
-                <p><strong>Student ID:</strong> ${data.studentId}</p>
-                <p><strong>Email:</strong> ${data.email}</p>
-                <p><strong>Registered:</strong> ${new Date(data.timestamp).toLocaleString()}</p>
-            </div>
-        `;
-    } else {
-        listDiv.innerHTML = '<p>No registrations found.</p>';
-    }
-}
-
-    <script>
-
+// LOAD DATA
 async function loadPage() {
-  const page = document.getElementById("page-select").value;
-
-  const docRef = doc(db, "pages", page);
+  const docRef = doc(db, "pages", "driving");
   const docSnap = await getDoc(docRef);
 
   if (docSnap.exists()) {
-    document.getElementById("editor").value = docSnap.data().content;
-  } else {
-    alert("Page not found!");
+    document.getElementById("page-title").innerText = docSnap.data().title;
+    document.getElementById("page-content").innerText = docSnap.data().content;
   }
 }
 
-async function savePage() {
-  const page = document.getElementById("page-select").value;
-  const content = document.getElementById("editor").value;
-
-  await setDoc(doc(db, "pages", page), {
-    content: content
-  });
-
-  alert("Content saved!");
-}
-
+loadPage();
 </script>
 </body>
 
