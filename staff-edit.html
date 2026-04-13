@@ -83,60 +83,6 @@
     Leicester College | Staff Portal | Spain Work Experience 2025/26
 </footer>
 
-<script>
-// Simple password protection
-function showAdminPanel() {
-    const password = prompt('Enter admin password:');
-    if(password === 'admin123') {
-        document.getElementById('admin-panel').style.display = 'block';
-        document.querySelector('.staff-intro').style.display = 'none';
-    } else {
-        alert('Incorrect password. Access denied.');
-    }
-}
-
-<h2>Edit Driving Page</h2>
-
-<input id="titleInput" placeholder="Title"><br><br>
-<textarea id="contentInput" placeholder="Content"></textarea><br><br>
-
-<button onclick="saveContent()">Save</button>
-    
-<script type="module">
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyDf7or18aKmzQayVtPldT_8dx4fqo_084o",
-  authDomain: "greece-portal-cms.firebaseapp.com",
-  projectId: "greece-portal-cms",
-  storageBucket: "greece-portal-cms.firebasestorage.app",
-  messagingSenderId: "382158940858",
-  appId: "1:382158940858:web:b0f69cdc1b428ec2f2b083",
-  measurementId: "G-57DWVREYY5"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-
-// LOAD DATA
-async function loadPage() {
-  const docRef = doc(db, "pages", "driving");
-  const docSnap = await getDoc(docRef);
-
-  if (docSnap.exists()) {
-    document.getElementById("page-title").innerText = docSnap.data().title;
-    document.getElementById("page-content").innerText = docSnap.data().content;
-  }
-}
-
-loadPage();
-</script>
 </body>
 
 </html>
